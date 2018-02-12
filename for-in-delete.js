@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let string = '';
+  for (var key in obj) {
+    string += obj[key];
+  }
+  return string;
 }
 
 
@@ -53,7 +57,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+const greaterThan10 = (object) => {
+  for (var key in object) {
+    if (object[key] > 10) {
+      object[key] = 0;
+    }
+  }
+  return object;
+}
 
 
 
@@ -65,7 +76,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+const double = (object) => {
+  for (var key in object) {
+    object[key] *= 2;
+  }
+  return object;
+}
 
 
 
@@ -79,7 +95,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+const secrets = (object) => {
+  let empty = '';
+  for (var key in object) {
+    if (key.indexOf('sh') !== -1) {
+      empty += object[key];
+    }
+  }
+  return empty;
+}
 
 
 
@@ -110,7 +134,12 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+const removePassword = (object) => {
+  for (var key in object) {
+    delete object.password;
+  }
+  return object;
+}
 
 
 
@@ -129,7 +158,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for (var key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100 ) {
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 
 
@@ -142,7 +175,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+const startsWithK = (object) => {
+  for (var key in object) {
+    if (key.startsWith('k')) {
+      delete object[key];
+    }
+  }
+  return object;
+}
 
 
 
@@ -157,6 +197,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+const hiddenTreasure = (object) => {
+  for (var key in object) {
+    if (object[key].includes('treasure') !== true) {
+      delete object[key];
+    }
+  }
+  return object;
+}
 
 
